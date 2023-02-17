@@ -1,0 +1,39 @@
+.TaskList {
+    width: 600px;
+    padding-left: 0;
+  }
+  
+  .TaskList_item {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding-bottom: 5px;
+  }
+  
+  .TaskList_item + .TaskList_item {
+    margin-top: 12px;
+  }
+  
+  .TaskList_item.completed {
+    background-color: green;
+  }
+  
+  .TaskList_text {
+    flex: 0 0 65%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 16px;
+    border-radius: 3px;
+  }
+  
+  .TaskList_actions {
+    display: flex;
+    justify-content: center;
+   
+  }
+  
+  .TaskList_button {
+    margin-right: 4px;
+    margin-left: 4px;
+    margin-left: 20px;
+  }
