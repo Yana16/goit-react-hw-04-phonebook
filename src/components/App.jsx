@@ -35,7 +35,7 @@ const App = () => {
     setFilter(e.currentTarget.value);
   };
 
-  const getVisibleContacts = (contacts, filter) => {
+  const getVisibleContacts = () => {
     return contacts.filter(contacts =>
       contacts.name.toLowerCase().includes(filter.toLowerCase())
     );
@@ -46,21 +46,21 @@ const App = () => {
       prevContacts.filter(({ id }) => id !== contactId)
     );
   };
+  const visibleContats = getVisibleContacts();
 
+  console.log('contacts', contacts);
   return (
     <div>
       <h1 className="h1">Phonebook</h1>
-
       <ContactForm onAddContact={addContact} />
-
       <h2>Contacts</h2>
-      {getVisibleContacts.length > 1 && (
+      {visibleContats.length > 1 && (
         <Filter value={filter} onChangeFilter={changeFilter} />
       )}
-
-      {getVisibleContacts.length > 0 && (
+      ​
+      {visibleContats.length > 0 && (
         <ContactList
-          contacts={getVisibleContacts}
+          contacts={visibleContats}
           onRemoveContact={removeContact}
         />
       )}
